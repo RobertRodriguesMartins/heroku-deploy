@@ -3,12 +3,12 @@ const app = require('express')();
 
 const { PORT } = process.env;
 
-app.get('/', (_req, res, _next) => {
+app.get('/', (_req, res) => {
   try {
-    return res.status(200).json({ message: 'ok' })
+    return res.status(200).json({ message: 'ok' });
   } catch (err) {
-    console.log(err);
+    return res.status(500).end();
   }
-})
+});
 
 app.listen(PORT);
