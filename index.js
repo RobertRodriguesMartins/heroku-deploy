@@ -11,4 +11,12 @@ app.get('/', (_req, res) => {
   }
 });
 
+app.get('/cicd', (_req, res, next) => {
+  try {
+    return res.status(200).json({ message: 'cicd' });
+  } catch (err) {
+    return res.status(500).end();
+  }
+});
+
 app.listen(PORT);
