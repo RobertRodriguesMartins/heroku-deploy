@@ -1,9 +1,9 @@
 require('dotenv').config();
 const app = require('express')();
 
-const PORT = process.env.PORT;
+const { PORT } = process.env;
 
-app.get('/', (req, res, next) => {
+app.get('/', (_req, res, _next) => {
   try {
     return res.status(200).json({ message: 'ok' })
   } catch (err) {
@@ -11,4 +11,4 @@ app.get('/', (req, res, next) => {
   }
 })
 
-app.listen(PORT, () => console.log(`running on ${PORT}`));
+app.listen(PORT);
