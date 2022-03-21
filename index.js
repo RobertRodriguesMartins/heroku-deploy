@@ -11,7 +11,7 @@ app.get('/', (_req, res) => {
   }
 });
 
-app.get('/cicd', (_req, res, next) => {
+app.get('/cicd', (_req, res) => {
   try {
     return res.status(200).json({ message: 'cicd' });
   } catch (err) {
